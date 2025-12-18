@@ -1,0 +1,530 @@
+:root {
+  --primary: #1abc9c;
+  --primary-dark: #128f76;
+  --dark: #2c3e50;
+  --light: #f8f9fa;
+  --muted: #6c757d;
+  --white: #ffffff;
+}
+
+/* Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font: inherit;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--dark);
+  color: var(--white);
+  padding: 0.75rem 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Nav toggle (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+}
+
+/* Masthead */
+.masthead {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.masthead-inner {
+  width: 100%;
+}
+
+.masthead-avatar {
+  width: 16rem;
+  /* bigger circle */
+  height: 16rem;
+  /* keep equal for a circle */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  /* thinner white border */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+
+.masthead-heading {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.masthead-subheading {
+  font-size: 1.25rem;
+}
+
+/* Divider */
+.divider {
+  margin: 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.divider-dark {
+  color: var(--dark);
+}
+
+.divider-line {
+  width: 7rem;
+  height: 0.25rem;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.divider-icon {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+/* Sections */
+.section {
+  padding: 6rem 0;
+}
+
+.section-light {
+  background: var(--light);
+}
+
+.section-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.text-white {
+  color: var(--white);
+}
+
+
+
+.plus-icon {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+/* About */
+.about-inner {
+  text-align: center;
+}
+
+.about-text {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.about-text p {
+  margin: 0;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-outline-light {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline-light {
+  border: 1px solid var(--white);
+  color: var(--white);
+  background: none;
+}
+
+.btn-outline-light:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* Contact form */
+.contact-form {
+  max-width: 600px;
+  margin: 2.5rem auto 0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  font: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.15rem rgba(26, 188, 156, 0.25);
+}
+
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: var(--white);
+}
+
+.footer-top {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-column h4 {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.footer-column p {
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background: #1a252f;
+  font-size: 0.875rem;
+}
+
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1050;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  display: none;
+  max-width: 700px;
+  width: 100%;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  background: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  margin: 1.5rem auto;
+  border-radius: 0.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Smooth scroll offset */
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  padding-top: 4.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    right: 1.25rem;
+    top: 3.25rem;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.15s ease-out;
+  }
+
+  .nav-menu.open {
+    transform: scaleY(1);
+  }
+
+  .nav-link {
+    padding: 0.6rem 1rem;
+  }
+
+  .masthead-heading {
+    font-size: 2.3rem;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .footer-top {
+    padding: 2.5rem 1.25rem;
+  }
+}
+
+/* --- Portfolio replaced with info columns --- */
+
+.info-columns {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.info-column h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.info-column ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.info-column li {
+  margin-bottom: 0.5rem;
+}
+
+/* Remove hover overlay from portfolio items if any exist */
+  {
+  /* If you kept older portfolio CSS, nothing will break,
+     but you're no longer using .portfolio-grid and .portfolio-item. */
+}
+
+/* --- Contact bubbles --- */
+
+.contact-bubbles {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-bubble {
+  background: var(--light);
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.05);
+}
+
+.contact-bubble h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.contact-bubble p {
+  margin: 0;
+}
+
+.contact-bubble a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.contact-bubble a:hover {
+  text-decoration: underline;
+}
+
+/* LinkedIn area under contact */
+.contact-linkedin {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.contact-linkedin a {
+  color: var(--primary-dark);
+  word-break: break-all;
+}
+
+.contact-linkedin a:hover {
+  text-decoration: underline;
+}
+
+/* Footer: if you only want one column, this keeps it centered nicely */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+}
